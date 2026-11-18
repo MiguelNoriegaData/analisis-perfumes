@@ -1,0 +1,21 @@
+rank,clon_marca,clon_perfume,clon_fragrantica_id,original_marca,original_perfume,original_fragrantica_id,certeza_usuario,nota,fuente_relacion,parecido_acordes_pct
+1,Maison Alhambra,Yeah,83061,Yves Saint Laurent,Y Eau de Parfum,50757,seguro,,usuario,99.2
+4,Rasasi,Hawas Elixir,,Jean Paul Gaultier,Le Male Elixir,81642,seguro,clon no está en Kaggle; parecido pendiente de la capa propia,usuario,
+5,Lattafa,Liam Blue Shine,85096,Giorgio Armani,Acqua di Giò Profondo,59532,seguro,"por acordes, el más parecido es D&G Light Blue Eau Intense PH (96 %)",usuario,86.9
+7,Afnan,Rare Reef,,Louis Vuitton,Pacific Chill,81423,seguro,clon no está en Kaggle,usuario,
+9,Lattafa,Jasoor,85093,Valentino,Uomo Born in Roma Coral Fantasy,71761,seguro,,usuario,74.8
+10,Lattafa,Fakhar Platinum,,Yves Saint Laurent,Y Elixir,90024,duda,"el usuario dice ""se parece a algún Y Elixir""; clon no está en Kaggle",usuario,
+11,Armaf,Hunter Intense,50327,Dior,Sauvage,31861,duda,el usuario lo ve como combinación de Sauvage + Invictus,usuario,72.5
+11,Armaf,Hunter Intense,50327,Paco Rabanne,Invictus,18471,duda,el usuario lo ve como combinación de Sauvage + Invictus,usuario,63.7
+13,Maison Alhambra,Jean Lowe Vibe,,Louis Vuitton,Pacific Chill,81423,seguro,clon no está en Kaggle,usuario,
+16,Al Haramain,L'Aventure,40405,Creed,Aventus,9828,seguro,,usuario,35.5
+18,Dumont,Nitro Red,73023,Paco Rabanne,Invictus,18471,duda,"el usuario dice ""tipo Invictus""",usuario,41.6
+19,Armaf,Odyssey Aqua,83134,Paco Rabanne,Invictus,18471,duda,"el usuario dice ""también a un Invictus""; ver Invictus Aqua en nota_datos; Invictus Aqua: 62.2 %",usuario,68.7
+23,Rasasi,Hawas Kobra,,Louis Vuitton,Imagination,67370,seguro,clon no está en Kaggle,usuario,
+26,Rasasi,Hawas Tropical,,Jean Paul Gaultier,Le Beau Paradise Garden,88836,seguro,clon no está en Kaggle,usuario,
+29,Rasasi,Hawas Malibu,,Jean Paul Gaultier,Le Male,430,duda,"el usuario escribió ""jpg le male""; versión exacta por confirmar; clon no está en Kaggle",usuario,
+30,Armaf,Hunter Men,27695,Lacoste,L.12.12 Blanc Eau Fraîche,71504,seguro,"por datos se parece más al L.12.12 Blanc 2011 (92.3 %, id 11043)",usuario,77.0
+32,Lattafa,Asad,72821,Dior,Sauvage Elixir,68415,seguro,,usuario,58.4
+34,Rasasi,Hawas for Him,46890,Paco Rabanne,Invictus,18471,seguro,,usuario,34.8
+36,Afnan,Turathi Blue,70839,Bvlgari,Tygar,41222,duda,"el usuario dice ""Bulgari Tiger o algo así""",usuario,63.8
+37,Maison Alhambra,Opulence Leather,,Tom Ford,Ombré Leather,50239,duda,"el usuario dice ""creo""; clon no está en Kaggle",usuario,

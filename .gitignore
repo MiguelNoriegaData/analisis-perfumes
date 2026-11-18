@@ -1,0 +1,15 @@
+# Datos de Kaggle: se descargan aparte, no se redistribuyen desde aquí
+data/raw/
+# Archivos que se regeneran con src/correr_todo.py
+*.duckdb
+*.duckdb.wal
+models/
+data/processed/powerbi/
+__pycache__/
+# Nunca subir claves ni configuración local
+.env
+*.key
+secrets*
+# Archivos personales que no se publican
+*.pbix
+*.docx

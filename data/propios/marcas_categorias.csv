@@ -1,0 +1,95 @@
+marca,categoria,slugs_dataset,perfumes_en_dataset,en_mi_ranking,nota,grupo,grupo_confianza,grupo_fuente
+Lattafa,Árabe,Lattafa-Perfumes,236,True,,Lattafa,alta,empresa matriz
+Rasasi,Árabe,Rasasi,226,True,,,,
+Armaf,Árabe,Armaf,258,True,,Sterling Perfumes Industries,media,"""one of several brands within the broader Sterling Group portfolio"" (Lazada BrandWiki) | https://brandwiki.lazada.sg/armaf/"
+Afnan,Árabe,Afnan,120,True,,Afnan,alta,empresa matriz
+Zimaya,Árabe,Zimaya,37,True,,Afnan,media,"tiendas la venden como ""Afnan Zimaya"" y Fragrantica registra algunos Zimaya bajo Afnan (p. ej. Afnan/Zimaya-Wujood); sin declaración oficial | https://www.perfume.com/afnan/afnan-zimaya-treasure/men-cologne"
+Maison Alhambra,Árabe,Maison-Alhambra,128,True,,Lattafa,media,"""firma hermana de Lattafa"" (Marie Claire España) y tiendas la venden como ""Lattafa Maison Alhambra""; sin declaración oficial | https://www.marie-claire.es/belleza/perfumes-arabes-lattafa-marcas-perfumeria-menos-conocidas-espana.html | https://www.anabis.com/sk/Maison-Alhambra-Fortnight.html"
+Al Haramain,Árabe,Al-Haramain-Perfumes,309,True,,,,
+Dumont,Árabe,Dumont,14,True,marca de Emiratos (Dumont Paris),,,
+Swiss Arabian,Árabe,Swiss-Arabian,239,False,,,,
+Ajmal,Árabe,Ajmal,301,False,,,,
+Arabian Oud,Árabe,Arabian-Oud,216,False,,,,
+Ard Al Zaafaran,Árabe,Ard-Al-Zaafaran,53,False,,,,
+Fragrance World,Árabe,Fragrance-World,45,False,20 perfumes del slug Fragrance-World se reasignan a French Avenue (datos/reasignacion_marca.csv),Fragrance World,alta,empresa matriz; también tiene Street Origins | https://fragranceworld.ae/brands/french-avenue
+French Avenue,Árabe,,20,False,en Kaggle sus perfumes están bajo el slug Fragrance-World; se reasignan por fragrantica_id con datos/reasignacion_marca.csv,Fragrance World,alta,"""its premium fragrance brand"" (comunicado Business Wire, mayo 2026); lanzada en 2012 según Gulf News | https://www.galvnews.com/fragrance-world-officially-launches-french-avenue-in-brazil-with-grand-ceremony-in-s-o-paulo/article_8cb5e386-21cd-558d-b30d-23770eb2aafa.html | https://gulfnews.com/business/corporate-news/fragrance-world-reaches-historic-milestone-in-over-150-countries-1.500413390"
+Paris Corner,Árabe,Paris-Corner,23,False,,,,
+Rayhaan,Árabe,,0,False,no está en el dataset; va completa a la capa propia,,,marca registrada por A.R.K. Perfumes & Cosmetics Trading (no se conocen otras marcas suyas en esta tabla) | https://trademarks.justia.com/owners/a-r-k-perfumes-cosmetics-trading-6246526
+Emper,Árabe,Emper,56,False,,,,
+Khadlaj,Árabe,,0,False,no está en el dataset; va completa a la capa propia,,,"sin grupo confirmado: un blog dice Al Ahlam Perfumes, pero en Beautyworld expone como Al Khadlaj Perfumes Ind LLC | https://perfumenez.com/blogs/arabian/who-owns-khadlaj-perfume/"
+Al Rehab,Árabe,Al-Rehab,237,False,,,,
+Nabeel,Árabe,Nabeel,113,False,,,,
+Rave,Árabe,,0,False,no está en el dataset; va completa a la capa propia,Lattafa,alta,el sitio oficial de Lattafa tiene sección de marca Rave | https://lattafa.com/brands/rave/
+Asdaaf,Árabe,Asdaaf,6,False,,Lattafa,media,"varias tiendas la venden como ""Lattafa Asdaaf""; sin declaración oficial | https://www.perfume.com/lattafa/lattafa-asdaaf-shaghaf/men-cologne | https://www.fragrancex.com/products/lattafa/lattafa-asdaaf-sa-ud-perfume"
+Giorgio Armani,Diseñador,Giorgio-Armani,230,True,,,,
+Nautica,Diseñador,Nautica,26,True,diseñador de gama masiva,,,
+Dior,Diseñador,Dior,278,False,,,,
+Chanel,Diseñador,Chanel,144,False,,,,
+Yves Saint Laurent,Diseñador,Yves-Saint-Laurent,254,False,,,,
+Versace,Diseñador,Versace,79,False,,,,
+Paco Rabanne,Diseñador,Paco-Rabanne,124,False,hoy se comercializa como Rabanne,,,
+Jean Paul Gaultier,Diseñador,Jean-Paul-Gaultier,161,False,,,,
+Prada,Diseñador,Prada,96,False,,,,
+Givenchy,Diseñador,Givenchy,273,False,,,,
+Hugo Boss,Diseñador,Hugo-Boss,134,False,,,,
+Dolce&Gabbana,Diseñador,Dolce-Gabbana,116,False,,,,
+Calvin Klein,Diseñador,Calvin-Klein,190,False,,,,
+Carolina Herrera,Diseñador,Carolina-Herrera,190,False,,,,
+Burberry,Diseñador,Burberry,96,False,,,,
+Valentino,Diseñador,Valentino,52,False,,,,
+Montblanc,Diseñador,Montblanc,40,False,,,,
+Azzaro,Diseñador,Azzaro,101,False,,,,
+Hermès,Diseñador,Hermes,130,False,casa de moda; tiene línea Hermessence de corte nicho,,,
+Ralph Lauren,Diseñador,Ralph-Lauren,107,False,,,,
+Lacoste,Diseñador,Lacoste-Fragrances,70,False,,,,
+Davidoff,Diseñador,Davidoff,104,False,,,,
+Issey Miyake,Diseñador,Issey-Miyake,113,False,,,,
+Tom Ford,Diseñador,Tom-Ford,126,False,la marca mezcla líneas de diseñador y Private Blend (nicho); se decide por línea más adelante,,,
+Tommy Hilfiger,Diseñador,Tommy-Hilfiger,87,False,,,,
+Bvlgari,Diseñador,Bvlgari,138,False,,,,
+Guerlain,Diseñador,Guerlain,526,False,casa histórica; línea L'Art & la Matière de corte nicho,,,
+Louis Vuitton,Diseñador,Louis-Vuitton,46,False,lujo de casa de moda; se clasifica como Diseñador por ser casa de moda,,,
+Mugler,Diseñador,Mugler,169,False,,,,
+Viktor&Rolf,Diseñador,Viktor-Rolf,100,False,,,,
+Maison Margiela,Diseñador,Maison-Martin-Margiela,34,False,"línea Replica, se toma como Diseñador",,,
+Coach,Diseñador,Coach,37,False,,,,
+Ferrari,Diseñador,Ferrari,37,False,,,,
+Antonio Banderas,Diseñador,Antonio-Banderas,85,False,,,,
+Perry Ellis,Diseñador,Perry-Ellis,65,False,,,,
+Creed,Nicho,Creed,97,False,,,,
+Parfums de Marly,Nicho,Parfums-de-Marly,39,False,,,,
+Maison Francis Kurkdjian,Nicho,Maison-Francis-Kurkdjian,57,False,,,,
+Initio Parfums Prives,Nicho,Initio-Parfums-Prives,19,False,,,,
+Xerjoff,Nicho,Xerjoff,177,False,,,,
+Amouage,Nicho,Amouage,134,False,,,,
+Le Labo,Nicho,Le-Labo,60,False,,,,
+Byredo,Nicho,Byredo,76,False,,,,
+Diptyque,Nicho,Diptyque,84,False,,,,
+Nishane,Nicho,Nishane,49,False,,,,
+Mancera,Nicho,Mancera,89,False,,,,
+Montale,Nicho,Montale,160,False,,,,
+By Kilian,Nicho,By-Kilian,100,False,hoy se comercializa como Kilian Paris,,,
+Roja Dove,Nicho,Roja-Dove,159,False,hoy se comercializa como Roja Parfums,,,
+Memo Paris,Nicho,Memo-Paris,66,False,,,,
+Frederic Malle,Nicho,Frederic-Malle,49,False,,,,
+Tiziana Terenzi,Nicho,Tiziana-Terenzi,110,False,,,,
+Acqua di Parma,Nicho,Acqua-di-Parma,89,False,frontera diseñador/nicho; se toma como Nicho,,,
+Penhaligon's,Nicho,Penhaligon-s,106,False,,,,
+Orto Parisi,Nicho,Orto-Parisi,9,False,,,,
+Bond No 9,Nicho,Bond-No-9,163,False,,,,
+Clive Christian,Nicho,Clive-Christian,88,False,,,,
+Tom Ford Private Blend,Nicho,,0,False,línea dentro de Tom-Ford; se separa por nombre de perfume,,,
+Esika,Catálogo,Esika,66,True,,Belcorp,alta,"Belcorp es ""dueña de L'Bel, Cyzone y Ésika"" | https://infomercado.pe/belcorp-la-reconocida-empresa-de-cosmeticos-que-nacio-de-una-disputa-entre-los-hermanos-belmont-220223-gb/"
+L'Bel,Catálogo,,0,False,no está en el dataset; va completa a la capa propia,Belcorp,alta,ver Esika | https://infomercado.pe/belcorp-la-reconocida-empresa-de-cosmeticos-que-nacio-de-una-disputa-entre-los-hermanos-belmont-220223-gb/
+Cyzone,Catálogo,,0,False,no está en el dataset; va completa a la capa propia,Belcorp,alta,ver Esika | https://infomercado.pe/belcorp-la-reconocida-empresa-de-cosmeticos-que-nacio-de-una-disputa-entre-los-hermanos-belmont-220223-gb/
+Avon,Catálogo,Avon,1284,False,,Natura &Co,alta,"en Latinoamérica la marca sigue con Natura; Avon International (Europa, África, Asia) se vendió a Regent en 2025 | https://tools.prnewswire.com/en-us/live/20823/release/20250918EN76996"
+Jafra,Catálogo,JAFRA,143,False,,Betterware de México,alta,Betterware compró Jafra México y EE. UU. en 2022 (US$255 M) | https://www.pymnts.com/acquisitions/2022/betterware-buys-mexican-beauty-firm-jafra-for-255m/
+Natura,Catálogo,Natura,466,False,,Natura &Co,alta,empresa matriz
+Fuller,Catálogo,Fuller-Cosmetics,40,False,,,,
+Yanbal,Catálogo,Yanbal,23,False,,,,
+Arabela,Catálogo,,0,False,no está en el dataset; va completa a la capa propia,,,
+Zermat,Catálogo,,0,False,no está en el dataset; va completa a la capa propia,,,
+O Boticario,Catálogo,O-Boticario,551,False,,Grupo Boticário,media,marca del Grupo Boticário (prensa brasileña) | https://www.abcdacomunicacao.com.br/o-boticario-vult-e-quem-disse-berenice-marcas-do-grupo-boticario-quebram-recorde-de-cases-no-effie-awards-brasil-e-latam-com-19-cases-finalistas/
+Oriflame,Catálogo,Oriflame,396,False,,,,
+Mary Kay,Catálogo,Mary-Kay,92,False,,,,
+Guess,Diseñador,Guess|guess,58,False,,,,

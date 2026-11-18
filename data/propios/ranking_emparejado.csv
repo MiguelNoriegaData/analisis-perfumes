@@ -1,0 +1,38 @@
+rank,nombre_original,marca,perfume,fragrantica_id,registro_elegido,genero_dataset,votos,metodo,puntaje_difuso,confianza,nota,uso
+1,Maison Alhambra Yeah,Maison Alhambra,Yeah,83061.0,Maison-Alhambra/Yeah-83061,for men,240.0,exacto_normalizado,100.0,alta,,todo el año
+2,Lattafa Fakhar Men,Lattafa,Fakhar,70465.0,Lattafa-Perfumes/Fakhar-Black-70465,for men,2461.0,manual,90.0,alta,'Fakhar Men' = Fakhar Black (versión masculina); confirmado por el usuario,todo el año
+3,Armaf Club de Nuit Iconic,Armaf,Club de Nuit Iconic,78475.0,Armaf/Club-de-Nuit-Blue-Iconic-78475,for men,1260.0,manual,95.0,alta,Club de Nuit Iconic = 'Club de Nuit Blue Iconic'; confirmado por el usuario,todo el año
+4,Rasasi Hawas Elixir,Rasasi,Hawas Elixir,,,,,sin_match,64.0,baja,"No está en el dataset (mejor candidato de la marca: Rasasi/Hawas-for-Her-67146, 64.0)",frío
+5,Lattafa Liam Blue Shine,Lattafa,Liam Blue Shine,85096.0,Lattafa-Perfumes/Liam-Blue-Shine-85096,for women and men,179.0,exacto_normalizado,100.0,alta,,calor
+6,Afnan 9PM Rebel,Afnan,9PM Rebel,,,,,sin_match,90.0,baja,"No está en el dataset (mejor candidato de la marca: Afnan/9pm-65414, 90.0)",todo el año
+7,Afnan Rare Reef,Afnan,Rare Reef,,,,,sin_match,60.0,baja,"No está en el dataset (mejor candidato de la marca: Afnan/Rare-Carbon-66627, 60.0)",todo el año
+8,Lattafa Ramz Silver,Lattafa,Ramz Silver,71868.0,Lattafa-Perfumes/Ramz-Lattafa-Silver-71868,for women and men,1131.0,manual,85.5,alta,En Fragrantica el nombre incluye la marca: 'Ramz Lattafa Silver',frío
+9,Lattafa Jasoor,Lattafa,Jasoor,85093.0,Lattafa-Perfumes/Jasoor-85093,for women and men,62.0,exacto_normalizado,100.0,alta,,todo el año
+10,Lattafa Fakhar Platin,Lattafa,Fakhar Lattafa Platin,,,,,manual_capa_propia,,alta,"No está en Kaggle. Es 'Fakhar Lattafa Platin' de la capa propia (Fakhar Platin); el autor confirmó que el nombre es Platin, no Platinum.",todo el año
+11,Armaf Hunter Intense,Armaf,Hunter Intense,50327.0,Armaf/Hunter-Intense-50327,for men,888.0,exacto_normalizado,100.0,alta,,todo el año
+12,Rasasi Hawas Ice,Rasasi,Hawas Ice,89050.0,Rasasi/Hawas-Ice-for-Him-89050,for men,376.0,manual,90.0,alta,Nombre oficial 'Hawas Ice for Him',todo el año
+13,Maison Alhambra Jean Lowe Vibe,Maison Alhambra,Jean Lowe Vibe,,,,,sin_match,82.8,baja,"No está en el dataset (mejor candidato de la marca: Maison-Alhambra/Jean-Lowe-Ombre-91352, 82.8)",todo el año
+14,Armaf Odyssey Mandarin Sky,Armaf,Odyssey Mandarin Sky,83132.0,Armaf/Odyssey-Mandarin-Sky-83132,for men,420.0,exacto_normalizado,100.0,alta,,frío
+15,Acqua di Giò / Profondo,Giorgio Armani,Acqua di Giò,410.0,Giorgio-Armani/Acqua-di-Gio-410,for men,18937.0,manual,100.0,alta,Usuario confirmó el clásico; se toma la versión masculina (hay homónima femenina),todo el año
+16,Al Haramain L’Aventure,Al Haramain,L'Aventure,40405.0,Al-Haramain-Perfumes/L-Aventure-40405,for men,2068.0,exacto_normalizado,100.0,alta,,todo el año
+17,Armaf Club De Nuit Intense,Armaf,Club de Nuit Intense Man,34696.0,Armaf/Club-de-Nuit-Intense-Man-34696,for men,16740.0,exacto_normalizado,100.0,alta,,todo el año
+18,Dumont Nitro Red,Dumont,Nitro Red,73023.0,Dumont/Nitro-Red-73023,for men,239.0,exacto_normalizado,100.0,alta,,todo el año
+19,Armaf Odyssey Aqua,Armaf,Odyssey Aqua,83134.0,Armaf/Odyssey-Aqua-Edition-83134,for men,121.0,manual,90.0,alta,Nombre oficial 'Odyssey Aqua Edition',todo el año
+20,Nautica Voyage EDT,Nautica,Voyage,913.0,Nautica/Nautica-Voyage-913,for men,12304.0,manual,90.0,alta,Voyage clásico EDT,todo el año
+21,Afnan Zimaya Ghyoom,Afnan,Zimaya Ghyoom,92590.0,Zimaya/Ghyoom-92590,for men,23.0,manual,90.0,alta,Registrado bajo la marca Zimaya (sublínea de Afnan),todo el año
+22,Rasasi Hawas Atlantis,Rasasi,Hawas Atlantis,,,,,sin_match,62.2,baja,"No está en el dataset (mejor candidato de la marca: Rasasi/Fattan-53484, 62.2)",todo el año
+23,Rasasi Hawas Kobra,Rasasi,Hawas Kobra,,,,,sin_match,85.5,baja,"No está en el dataset (mejor candidato de la marca: Rasasi/Hawas-Ice-for-Him-89050, 85.5)",todo el año
+24,Ésika One,Esika,Uno,79837.0,Esika/Uno-79837,for men,100.0,manual,,media,'Ésika One' = Uno (Kaggle 2022): el autor lo buscó como el mismo perfume el 2026-11-06.,todo el año
+25,Khamrah Qahwa,Lattafa,Khamrah Qahwa,88175.0,Lattafa-Perfumes/Khamrah-Qahwa-88175,for women and men,1564.0,exacto_normalizado,100.0,alta,,frío
+26,Rasasi Hawas Tropical,Rasasi,Hawas Tropical,,,,,sin_match,60.0,baja,"No está en el dataset (mejor candidato de la marca: Rasasi/Rawda-19662, 60.0)",calor
+27,Lattafa Suqraat,Lattafa,Suqraat,75471.0,Lattafa-Perfumes/Suqraat-75471,for men,310.0,exacto_normalizado,100.0,alta,,todo el año
+28,Maison Alhambra Alpine Homme Sport,Maison Alhambra,Alpine Homme Sport,83311.0,Maison-Alhambra/Alpine-Homme-Sport-83311,for men,264.0,exacto_normalizado,100.0,alta,,todo el año
+29,Rasasi Hawas Malibu,Rasasi,Hawas Malibu,,,,,sin_match,60.0,baja,"No está en el dataset (mejor candidato de la marca: Rasasi/Rawda-19662, 60.0)",calor
+30,Armaf Hunter EDT,Armaf,Hunter,27695.0,Armaf/Hunter-Men-27695,for men,326.0,manual,100.0,alta,Hunter EDT masculino = 'Hunter Men' (el 'Hunter' a secas es femenino); confirmado por el usuario,calor
+31,Khamrah Dukhan,Lattafa,Khamrah Dukhan,,,,,sin_match,90.0,baja,"No está en el dataset (mejor candidato de la marca: Lattafa-Perfumes/Khamrah-75805, 90.0)",frío
+32,Lattafa Asad,Lattafa,Asad,72821.0,Lattafa-Perfumes/Asad-72821,for men,5345.0,exacto_normalizado,100.0,alta,,frío
+33,Ésika Magnat Select,Esika,Magnat Select,,,,,manual_capa_propia,,media,No está en Kaggle; emparejado con Magnat Select de la capa propia (Esika).,frío
+34,Rasasi Hawas original,Rasasi,Hawas for Him,46890.0,Rasasi/Hawas-for-Him-46890,for men,5608.0,manual,100.0,alta,Usuario confirmó: 'original' = Hawas for Him,todo el año
+35,Armaf Club de Nuit Urban Elixir,Armaf,Club de Nuit Urban Man Elixir,77860.0,Armaf/Club-De-Nuit-Urban-Elixir-77860,for men,1078.0,manual,95.0,alta,Nombre oficial 'Club de Nuit Urban Elixir',todo el año
+36,Afnan Turathi Blue,Afnan,Turathi Blue,70839.0,Afnan/Turathi-Blue-70839,for men,2466.0,exacto_normalizado,100.0,alta,,todo el año
+37,Maison Alhambra Opulence Leather,Maison Alhambra,Opulence Leather,,,,,manual_capa_propia,,alta,No está en Kaggle; emparejado con Opulence Leather de la capa propia.,frío

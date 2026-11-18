@@ -1,0 +1,204 @@
+nota,muestra,favoritos,medio,menos,n_por_grupo,dif
+bergamota,solo_kaggle,7,4,3,8,4
+geranio,solo_kaggle,4,0,1,8,3
+manzana,solo_kaggle,4,3,1,8,3
+salvia,solo_kaggle,3,1,1,8,2
+enebro,solo_kaggle,2,1,0,8,2
+limón,solo_kaggle,3,3,1,8,2
+madera ambarada,solo_kaggle,2,0,0,8,2
+lavanda,solo_kaggle,4,3,2,8,2
+cilantro (semilla),solo_kaggle,1,1,0,8,1
+anís estrella,solo_kaggle,1,0,0,8,1
+haba tonka,solo_kaggle,3,1,2,8,1
+notas marinas,solo_kaggle,1,1,0,8,1
+pomelo,solo_kaggle,1,0,0,8,1
+nuez moscada,solo_kaggle,1,1,0,8,1
+menta,solo_kaggle,2,1,1,8,1
+musgo,solo_kaggle,1,1,0,8,1
+jengibre,solo_kaggle,3,1,2,8,1
+melón,solo_kaggle,1,0,0,8,1
+incienso,solo_kaggle,1,0,0,8,1
+cuero,solo_kaggle,1,1,0,8,1
+cardamomo,solo_kaggle,3,0,2,8,1
+violeta,solo_kaggle,1,1,0,8,1
+pera,solo_kaggle,1,0,0,8,1
+vetiver,solo_kaggle,3,2,2,8,1
+calamus,solo_kaggle,0,1,0,8,0
+artemisa,solo_kaggle,0,1,0,8,0
+ámbar,solo_kaggle,4,4,4,8,0
+toronja,solo_kaggle,1,1,1,8,0
+ylang-ylang,solo_kaggle,1,0,1,8,0
+salvia esclarea,solo_kaggle,0,1,0,8,0
+mignonette,solo_kaggle,0,1,0,8,0
+nardo,solo_kaggle,1,0,1,8,0
+musgo de roble,solo_kaggle,0,2,0,8,0
+olíbano,solo_kaggle,1,0,1,8,0
+pimienta rosa,solo_kaggle,1,0,1,8,0
+calone,solo_kaggle,0,1,0,8,0
+ciclamen,solo_kaggle,0,1,0,8,0
+caramelo,solo_kaggle,0,1,0,8,0
+cedro,solo_kaggle,3,4,3,8,0
+durazno,solo_kaggle,0,1,0,8,0
+ciruela,solo_kaggle,1,0,1,8,0
+davana,solo_kaggle,0,1,0,8,0
+cardamon,solo_kaggle,1,0,1,8,0
+almizcle blanco,solo_kaggle,0,1,0,8,0
+abedul,solo_kaggle,0,1,0,8,0
+mimosa,solo_kaggle,0,1,0,8,0
+hojas verdes,solo_kaggle,0,1,0,8,0
+ginebra,solo_kaggle,0,1,0,8,0
+madera de deriva,solo_kaggle,1,0,1,8,0
+lirio de los valles,solo_kaggle,0,1,0,8,0
+naranja,solo_kaggle,0,4,0,8,0
+mandarina,solo_kaggle,1,3,1,8,0
+loto,solo_kaggle,0,1,0,8,0
+lima,solo_kaggle,0,1,0,8,0
+jazmín,solo_kaggle,1,3,1,8,0
+jacinto,solo_kaggle,0,1,0,8,0
+grosella negra,solo_kaggle,0,1,0,8,0
+fresia,solo_kaggle,0,1,0,8,0
+rosa,solo_kaggle,0,2,0,8,0
+pimienta negra,solo_kaggle,1,0,1,8,0
+sandía,solo_kaggle,0,1,0,8,0
+tabaco,solo_kaggle,1,0,1,8,0
+romero,solo_kaggle,1,1,1,8,0
+pachulí,solo_kaggle,4,5,4,8,0
+neroli,solo_kaggle,0,1,0,8,0
+pimienta,solo_kaggle,1,0,1,8,0
+ambroxan,solo_kaggle,0,3,1,8,-1
+elemí,solo_kaggle,0,1,1,8,-1
+hoja de violeta,solo_kaggle,0,0,1,8,-1
+iris,solo_kaggle,0,0,1,8,-1
+azahar,solo_kaggle,1,0,2,8,-1
+azafrán,solo_kaggle,0,2,1,8,-1
+ciprés,solo_kaggle,0,1,1,8,-1
+candied fruits,solo_kaggle,0,0,1,8,-1
+piña,solo_kaggle,0,2,1,8,-1
+notas amaderadas,solo_kaggle,1,1,2,8,-1
+notas especiadas,solo_kaggle,0,0,1,8,-1
+praliné,solo_kaggle,0,0,1,8,-1
+ládano,solo_kaggle,1,0,2,8,-1
+notas de flores blancas,solo_kaggle,0,0,1,8,-1
+notas cítricas,solo_kaggle,0,0,1,8,-1
+notas acuáticas,solo_kaggle,0,0,1,8,-1
+vainilla,solo_kaggle,1,1,2,8,-1
+tagetes,solo_kaggle,0,1,1,8,-1
+ámbar gris,solo_kaggle,0,1,1,8,-1
+benjuí,solo_kaggle,0,0,2,8,-2
+café,solo_kaggle,0,0,2,8,-2
+canela,solo_kaggle,0,0,2,8,-2
+almizcle,solo_kaggle,3,4,5,8,-2
+sándalo,solo_kaggle,1,2,3,8,-2
+bergamota,ranking_completo,9,5,3,12,6
+geranio,ranking_completo,4,0,1,12,3
+lavanda,ranking_completo,6,3,3,12,3
+manzana,ranking_completo,5,4,2,12,3
+cilantro (semilla),ranking_completo,2,2,0,12,2
+jengibre,ranking_completo,4,3,2,12,2
+madera ambarada,ranking_completo,3,0,1,12,2
+enebro,ranking_completo,2,1,0,12,2
+limón,ranking_completo,3,4,1,12,2
+salvia,ranking_completo,3,1,1,12,2
+chabacano,ranking_completo,1,1,0,12,1
+cardamomo,ranking_completo,4,2,3,12,1
+anís estrella,ranking_completo,1,0,0,12,1
+guayaba,ranking_completo,1,0,0,12,1
+albahaca,ranking_completo,1,1,0,12,1
+ambreta,ranking_completo,1,1,0,12,1
+almizcle blanco,ranking_completo,1,1,0,12,1
+menta,ranking_completo,3,2,2,12,1
+notas marinas,ranking_completo,1,1,0,12,1
+pera,ranking_completo,1,0,0,12,1
+nuez moscada,ranking_completo,1,1,0,12,1
+pomelo,ranking_completo,1,0,0,12,1
+rosa,ranking_completo,1,3,0,12,1
+musgo de roble,ranking_completo,1,2,0,12,1
+mugwort,ranking_completo,1,0,0,12,1
+incienso,ranking_completo,2,0,1,12,1
+melón,ranking_completo,1,0,0,12,1
+cedro,ranking_completo,4,4,3,12,1
+spearmint,ranking_completo,1,0,0,12,1
+vetiver,ranking_completo,3,2,2,12,1
+vainilla,ranking_completo,3,2,2,12,1
+pimienta rosa,ranking_completo,2,0,1,12,1
+palo santo,ranking_completo,1,0,0,12,1
+caramelo,ranking_completo,1,1,0,12,1
+cidra,ranking_completo,1,1,0,12,1
+grosella negra,ranking_completo,1,2,0,12,1
+chocolate,ranking_completo,1,0,0,12,1
+dátiles,ranking_completo,1,1,0,12,1
+ginebra,ranking_completo,0,1,0,12,0
+higo,ranking_completo,1,1,1,12,0
+haba tonka,ranking_completo,4,2,4,12,0
+aquatic notes,ranking_completo,0,1,0,12,0
+candied fruits,ranking_completo,0,1,0,12,0
+artemisa,ranking_completo,0,1,0,12,0
+hoja de violeta,ranking_completo,1,0,1,12,0
+cuero,ranking_completo,1,1,1,12,0
+davana,ranking_completo,0,1,0,12,0
+calamus,ranking_completo,0,1,0,12,0
+calone,ranking_completo,0,1,0,12,0
+ylang-ylang,ranking_completo,1,0,1,12,0
+té verde,ranking_completo,0,1,0,12,0
+semilla de zanahoria,ranking_completo,0,1,0,12,0
+sandía,ranking_completo,0,1,0,12,0
+violeta,ranking_completo,1,1,1,12,0
+pimienta negra,ranking_completo,1,0,1,12,0
+olíbano,ranking_completo,1,0,1,12,0
+pimienta,ranking_completo,1,0,1,12,0
+musgo,ranking_completo,1,1,1,12,0
+mimosa,ranking_completo,0,1,0,12,0
+mignonette,ranking_completo,0,1,0,12,0
+romero,ranking_completo,1,1,1,12,0
+salvia esclarea,ranking_completo,0,1,0,12,0
+jacinto,ranking_completo,0,1,0,12,0
+lima,ranking_completo,0,1,0,12,0
+hojas verdes,ranking_completo,0,1,0,12,0
+cardamon,ranking_completo,1,0,1,12,0
+fresia,ranking_completo,0,1,0,12,0
+ciruela,ranking_completo,1,1,1,12,0
+ciclamen,ranking_completo,0,1,0,12,0
+abedul,ranking_completo,0,1,0,12,0
+notas de flores blancas,ranking_completo,0,1,0,12,0
+neroli,ranking_completo,0,2,0,12,0
+notas amaderadas,ranking_completo,2,2,2,12,0
+naranja,ranking_completo,1,5,1,12,0
+nardo,ranking_completo,1,0,1,12,0
+loto,ranking_completo,0,1,0,12,0
+lirio de los valles,ranking_completo,0,1,0,12,0
+madera de deriva,ranking_completo,1,1,1,12,0
+benjuí,ranking_completo,1,1,2,12,-1
+coconut water,ranking_completo,0,0,1,12,-1
+fig leaves,ranking_completo,0,0,1,12,-1
+ámbar gris,ranking_completo,0,2,1,12,-1
+notas especiadas,ranking_completo,0,0,1,12,-1
+notas acuáticas,ranking_completo,0,0,1,12,-1
+durazno,ranking_completo,0,1,1,12,-1
+coco,ranking_completo,0,0,1,12,-1
+cistus,ranking_completo,0,0,1,12,-1
+elemí,ranking_completo,0,1,1,12,-1
+cumarina,ranking_completo,0,0,1,12,-1
+ciprés,ranking_completo,0,1,1,12,-1
+cashmere,ranking_completo,0,0,1,12,-1
+azafrán,ranking_completo,0,2,1,12,-1
+ambroxan,ranking_completo,0,3,1,12,-1
+café,ranking_completo,0,1,1,12,-1
+ládano,ranking_completo,1,0,2,12,-1
+mandarina,ranking_completo,2,4,3,12,-1
+jazmín,ranking_completo,1,3,2,12,-1
+toronja,ranking_completo,2,1,3,12,-1
+tagetes,ranking_completo,0,1,1,12,-1
+tabaco,ranking_completo,1,0,2,12,-1
+notas cítricas,ranking_completo,0,1,1,12,-1
+madagascar ginger,ranking_completo,0,0,1,12,-1
+praliné,ranking_completo,0,1,1,12,-1
+pimienta gorda,ranking_completo,0,0,1,12,-1
+piña,ranking_completo,1,2,2,12,-1
+smoked spices,ranking_completo,0,0,1,12,-1
+sándalo,ranking_completo,2,2,4,12,-2
+canela,ranking_completo,0,3,2,12,-2
+azahar,ranking_completo,1,1,4,12,-3
+almizcle,ranking_completo,4,7,7,12,-3
+iris,ranking_completo,0,0,3,12,-3
+pachulí,ranking_completo,4,6,7,12,-3
+ámbar,ranking_completo,5,5,8,12,-3

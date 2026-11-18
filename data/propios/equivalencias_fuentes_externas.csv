@@ -1,0 +1,19 @@
+rank,clon_perfume,clon_fragrantica_id,original_marca,original_perfume,original_fragrantica_id,tipo_fuente,fuente_url,nota,parecido_acordes_pct,coincide_con_usuario
+2,Fakhar (Black),70465,Yves Saint Laurent,Y Eau de Parfum,50757,reseña de cliente,https://arabicparfums.com/en/products/fakhar-man-lattafa-100ml,"reseña: ""huele igual que el YSL Y EDP""",95.1,usuario no lo sabía
+3,Club de Nuit Iconic,78475,Chanel,Bleu de Chanel,9099,tienda,https://fathyibrahim.com/en/products/club-de-nuit-blue-iconic-for-men-by-armaf-eau-de-parfum-105ml,"""inspired by Bleu de Chanel""",96.1,usuario no lo sabía
+4,Hawas Elixir,,Jean Paul Gaultier,Le Male Elixir,81642,tienda,https://tienda.parfumistas.com/products/rasasi-hawas-elixir,"""inspirado en JPG Le Male Elixir""",,sí
+5,Liam Blue Shine,85096,Giorgio Armani,Acqua di Giò Profondo,59532,tienda,https://arabicparfums.com/en/products/liam-blue-shine-lattafa-100ml,"""me recuerda a""",86.9,sí
+6,9PM Rebel,,Creed / MFK,Aventus Absolu / Baccarat Rouge 540,33519,prensa,https://vivir.com/article/afnan-9-00-pm-rebel,menciona dos inspiraciones; parecido calculado vs BR540 cuando el clon tenga datos,,usuario no lo sabía
+7,Rare Reef,,Louis Vuitton,Pacific Chill,81423,tienda,https://arabicparfums.com/en/products/rare-reef-afnan-100ml-muestra-5-ml,"""me recuerda a""",,sí
+8,Ramz Silver,71868,Jean Paul Gaultier,Ultra Male,30947,tienda,https://arabicparfums.com/en/products/ramz-silver-lattafa,"""me recuerda a""",89.4,usuario no lo sabía
+9,Jasoor,85093,Xerjoff,Erba Pura,55157,tienda,https://www.anabis.com/uk/Lattafa-Jasoor.html,"la tienda lo atribuye a ""algunas fuentes""",26.9,no: usuario dijo Uomo Born in Roma Coral Fantasy
+14,Odyssey Mandarin Sky,83132,Jean Paul Gaultier,Scandal Pour Homme,68074,tienda,https://arabicparfums.com/en/products/odyssey-mandarin-sky-armaf-100ml,"""me recuerda a""",91.9,usuario no lo sabía
+16,L'Aventure,40405,Creed,Aventus,9828,tienda,https://arabicparfums.com/en/products/l-aventure-al-haramain-200ml,"""me recuerda a""",35.5,sí
+19,Odyssey Aqua,83134,Paco Rabanne,Invictus,18471,tienda,https://arabicparfums.com/en/products/odyssey-aqua-armaf,"""me recuerda a""",68.7,sí
+21,Zimaya Ghyoom,92590,Dolce&Gabbana,K Parfum,62311,tienda,https://arabicparfums.com/products/ghyoom-zimaya-100ml,"la tienda dice ""K Parfum""; se compara con K EDP (2020), la versión más cercana en el dataset",83.0,usuario no lo sabía
+23,Hawas Kobra,,Louis Vuitton,Imagination,67370,tienda,https://arabicparfums.com/en/products/hawas-kobra-rasasi,"""me recuerda a""",,sí
+26,Hawas Tropical,,Jean Paul Gaultier,Le Beau Paradise Garden,88836,reseña de cliente,https://arabicparfums.com/en/products/hawas-tropical-rasasi-100ml,"reseña: ""más una inspiración que una copia directa""",,sí
+27,Suqraat,75471,Giorgio Armani,Acqua di Giò Profumo,29727,tienda,https://arabicparfums.com/en/products/suqraat-lattafa-100ml,"""me recuerda a""",47.3,usuario no lo sabía
+32,Asad,72821,Dior,Sauvage Elixir,68415,tienda,https://arabicparfums.com/en/products/asad-lattafa,"""me recuerda a""",58.4,sí
+36,Turathi Blue,70839,Bvlgari,Tygar,41222,tienda,https://arabicparfums.com/products/turathi-blue-afnan-90ml,"""me recuerda a""",63.8,sí
+37,Opulence Leather,,Tom Ford,Ombré Leather,50239,tienda,https://arabicparfums.com/en/products/opulence-leather-maison-alhambra-100ml,"""me recuerda a""",,sí

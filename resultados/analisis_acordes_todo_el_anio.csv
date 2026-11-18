@@ -1,0 +1,61 @@
+acorde,muestra,favoritos,medio,menos,n_por_grupo,dif
+fruity,solo_kaggle,3,4,1,6,2
+fresh,solo_kaggle,4,4,2,6,2
+fresh spicy,solo_kaggle,5,5,3,6,2
+anis,solo_kaggle,1,0,0,6,1
+balsamic,solo_kaggle,1,0,0,6,1
+green,solo_kaggle,3,2,2,6,1
+aromatic,solo_kaggle,6,6,5,6,1
+lavender,solo_kaggle,3,3,2,6,1
+smoky,solo_kaggle,1,1,0,6,1
+tobacco,solo_kaggle,1,0,0,6,1
+white floral,solo_kaggle,1,1,0,6,1
+floral,solo_kaggle,0,2,0,6,0
+warm spicy,solo_kaggle,5,1,5,6,0
+vanilla,solo_kaggle,1,0,1,6,0
+marine,solo_kaggle,0,1,0,6,0
+citrus,solo_kaggle,6,6,6,6,0
+soft spicy,solo_kaggle,1,0,1,6,0
+leather,solo_kaggle,1,1,1,6,0
+sweet,solo_kaggle,2,2,2,6,0
+amber,solo_kaggle,4,2,5,6,-1
+patchouli,solo_kaggle,0,0,1,6,-1
+animalic,solo_kaggle,0,0,1,6,-1
+herbal,solo_kaggle,1,1,2,6,-1
+ozonic,solo_kaggle,0,1,1,6,-1
+aquatic,solo_kaggle,0,2,2,6,-2
+powdery,solo_kaggle,1,3,3,6,-2
+woody,solo_kaggle,3,7,5,6,-2
+musky,solo_kaggle,1,5,6,6,-5
+fruity,ranking_completo,5,6,2,8,3
+fresh spicy,ranking_completo,6,6,3,8,3
+lavender,ranking_completo,4,3,2,8,2
+balsamic,ranking_completo,1,0,0,8,1
+green,ranking_completo,4,3,3,8,1
+caramel,ranking_completo,1,0,0,8,1
+aromatic,ranking_completo,7,8,6,8,1
+rose,ranking_completo,1,0,0,8,1
+sweet,ranking_completo,3,4,2,8,1
+tobacco,ranking_completo,1,0,0,8,1
+tropical,ranking_completo,1,0,0,8,1
+vanilla,ranking_completo,2,0,1,8,1
+smoky,ranking_completo,1,1,0,8,1
+floral,ranking_completo,0,2,0,8,0
+citrus,ranking_completo,8,8,8,8,0
+anis,ranking_completo,0,1,0,8,0
+leather,ranking_completo,1,1,1,8,0
+white floral,ranking_completo,0,2,0,8,0
+marine,ranking_completo,0,1,1,8,-1
+herbal,ranking_completo,1,1,2,8,-1
+amber,ranking_completo,6,2,7,8,-1
+animalic,ranking_completo,0,0,1,8,-1
+cinnamon,ranking_completo,0,0,1,8,-1
+fresh,ranking_completo,3,5,4,8,-1
+warm spicy,ranking_completo,6,1,7,8,-1
+soft spicy,ranking_completo,0,1,1,8,-1
+ozonic,ranking_completo,0,1,1,8,-1
+patchouli,ranking_completo,0,0,1,8,-1
+woody,ranking_completo,6,8,7,8,-1
+aquatic,ranking_completo,0,2,2,8,-2
+powdery,ranking_completo,1,5,3,8,-2
+musky,ranking_completo,0,6,7,8,-7

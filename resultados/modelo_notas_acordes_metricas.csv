@@ -1,0 +1,5 @@
+modelo,coseno_%,top5_%,calidad_vecinos_%,coseno_%_pocas_notas,n_prueba,n_pocas_notas
+base,56.7,36.3,53.8,49.4,3984,478
+knn,78.1,62.9,80.0,76.7,3984,478
+ridge,86.0,73.3,87.7,88.8,3984,478
+mezcla,84.1,70.4,85.7,85.2,3984,478
