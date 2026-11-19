@@ -36,7 +36,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-import duckdb
 import numpy as np
 import pandas as pd
 
@@ -85,6 +84,13 @@ class Datos:
 
 
 def cargar() -> Datos:
+    return _armar(*leer_base())
+
+
+def leer_base() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Lee de DuckDB: meta (una fila por perfume), acordes (id, acorde, peso) y notas."""
+    import duckdb  # solo para trabajar con la base local; la página usa cargar_archivos()
+
     con = duckdb.connect(str(DB), read_only=True)
     a = con.execute("SELECT fragrantica_id, acorde, peso FROM acordes_kaggle").df()
     meta = con.execute("""
@@ -122,7 +128,19 @@ def cargar() -> Datos:
         meta = pd.concat([meta, mp], ignore_index=True)
         notas = pd.concat([notas, npr], ignore_index=True)
     con.close()
+    return meta, a, notas
 
+
+def cargar_archivos(carpeta: Path) -> Datos:
+    """Carga los archivos ligeros de la página (12_exportar_app.py), sin DuckDB."""
+    carpeta = Path(carpeta)
+    meta = pd.read_parquet(carpeta / "perfumes.parquet")
+    a = pd.read_parquet(carpeta / "acordes.parquet")
+    notas = pd.read_parquet(carpeta / "notas.parquet")
+    return _armar(meta, a, notas)
+
+
+def _armar(meta: pd.DataFrame, a: pd.DataFrame, notas: pd.DataFrame) -> Datos:
     acordes = sorted(a.acorde.unique())
     meta = meta[meta.fragrantica_id.isin(a.fragrantica_id.unique())].reset_index(drop=True)
     idx = {fid: i for i, fid in enumerate(meta.fragrantica_id)}
@@ -173,7 +191,7 @@ def recomendar(d: Datos, *, perfumes: list[int] = (), acordes: list[str] = (), n
                no_perfumes: list[int] = (), no_acordes: list[str] = (), no_notas: list[str] = (),
                generos=("masculino", "unisex"), min_votos: int = 50, clima: str | None = None,
                n_por_categoria: int = 5, categorias=CATEGORIAS, incluir_estimados: bool = True,
-               modo: str = "portafolio") -> dict:
+               modo: str = "portafolio", con_notas: list[str] = ()) -> dict:
     if modo not in ("portafolio", "publico"):
         raise ValueError("modo debe ser 'portafolio' o 'publico'")
     partes = []
@@ -215,6 +233,8 @@ def recomendar(d: Datos, *, perfumes: list[int] = (), acordes: list[str] = (), n
     if modo == "publico":
         confiable &= m.uso_permitido.eq("capa_propia")
     m = m[~m.fragrantica_id.isin(excluir) & m.genero.isin(generos) & confiable]
+    for nota in con_notas:  # opcional: solo perfumes que lleven todas estas notas
+        m = m[m.fragrantica_id.isin(d.notas.loc[d.notas.nota == nota, "fragrantica_id"])]
 
     # notas de referencia, ordenadas por cuántos perfumes de entrada las llevan (más compartidas primero)
     frec = d.notas.loc[d.notas.fragrantica_id.isin(perfumes)].groupby("nota").size()
@@ -222,7 +242,7 @@ def recomendar(d: Datos, *, perfumes: list[int] = (), acordes: list[str] = (), n
     frec = frec.groupby(level=0).max()
     nota_es = d.notas.drop_duplicates("nota").set_index("nota").nota_es.dropna()
 
-    salida = {}
+    salida, ids = {}, {}
     for cat in categorias:
         top = m[m.categoria == cat].nlargest(n_por_categoria, "puntaje").copy()
         comunes = []
@@ -233,6 +253,8 @@ def recomendar(d: Datos, *, perfumes: list[int] = (), acordes: list[str] = (), n
         top["notas_en_comun"] = comunes
         acs = [", ".join(es(d.acordes[j]) for j in np.argsort(-d.X[d.idx[fid]])[:4]) for fid in top.fragrantica_id]
         top["acordes_principales"] = acs
+        ids[cat] = top.fragrantica_id.tolist()
         salida[cat] = top[["nombre", "marca", "anio", "parecido_%", "penalizacion_%", "fuente_acordes",
                            "acordes_principales", "notas_en_comun", "votos", "rating"]].reset_index(drop=True)
-    return {"perfil": describir_perfil(d, perfil), "recomendaciones": salida}
+    return {"perfil": describir_perfil(d, perfil), "recomendaciones": salida, "ids": ids,
+            "vector": perfil, "vector_no": neg}
