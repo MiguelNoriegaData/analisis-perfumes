@@ -25,6 +25,7 @@ import textos as T  # noqa: E402
 DATOS = AQUI / "datos"
 CATEGORIAS = ["Diseñador", "Árabe", "Nicho", "Catálogo"]
 GENEROS = {"masculino": "Masculino", "unisex": "Unisex", "femenino": "Femenino"}
+N_INICIAL, N_PASO, N_MAX = 6, 6, 30  # perfumes por categoría: se muestran 6 y "Ver más" agrega 6, hasta 30
 
 st.set_page_config(page_title=T.NOMBRE, page_icon="🫧", layout="wide")
 
@@ -257,8 +258,9 @@ def selector_favoritos(clave: str, perfumes: list[int], acordes: list[str], nota
     return perfumes + extra["p"], acordes + extra["a"], notas + extra["n"]
 
 
-def filtros(clave: str) -> dict:
-    with st.expander("Ajustes"):
+def filtros(clave: str, anidado: bool = False) -> dict:
+    caja = st.popover("Ajustes", icon=":material/tune:") if anidado else st.expander("Ajustes")
+    with caja:
         f1, f2, f3 = st.columns(3)
         generos = f1.multiselect("Género", list(GENEROS), default=["masculino", "unisex"], format_func=GENEROS.get,
                                  key=f"{clave}_gen")
@@ -268,8 +270,7 @@ def filtros(clave: str) -> dict:
                               "Es un criterio propio: cada quien decide cuándo usar su perfume.")
         estimados = f3.toggle("Incluir lanzamientos 2024–2026", value=True, key=f"{clave}_est",
                               help="Sus acordes los estima un modelo a partir de sus notas.")
-        n = f3.slider("Perfumes por categoría", 3, 12, 6, key=f"{clave}_n")
-    return dict(generos=tuple(generos), clima=clima, incluir_estimados=estimados, n_por_categoria=n)
+    return dict(generos=tuple(generos), clima=clima, incluir_estimados=estimados, n_por_categoria=N_MAX)
 
 
 # ---------- la huella (visual propia) ----------
@@ -394,9 +395,7 @@ def tarjeta(fila: pd.Series, fid: int, cat: str, v: np.ndarray, primero: bool) -
             f"<div class='chips'>{chips}</div>{notas_html}<div class='t-fuente'>{fuente}</div></div>")
 
 
-def ver_calculo(salida: dict, clave: str = "x"):
-    with st.container(key=f"destacado_calc_{clave}"), st.expander(
-            ":material/calculate: **Ver cálculo** · por qué salió cada perfume"):
+def _contenido_calculo(salida: dict):
         v = salida["vector"]
         s = pd.Series(v, index=d.acordes)
         s = s[s > 0].sort_values(ascending=False).head(12)
@@ -410,9 +409,11 @@ def ver_calculo(salida: dict, clave: str = "x"):
                     f"A los acordes estimados se les restan {r.AJUSTE_ESTIMADO * 100:.0f} puntos. "
                     "Lo marcado como favorito cuenta doble.")
         filas = []
+        vis = salida.get("_vis", {})
         for cat, ids in salida["ids"].items():
             t = salida["recomendaciones"][cat]
-            for fid, (_, f) in zip(ids, t.iterrows()):
+            n = vis.get(cat, N_INICIAL)
+            for fid, (_, f) in zip(ids[:n], t.head(n).iterrows()):
                 a = aportes(fid, v)
                 total = float(a.sum()) or 1
                 top = ", ".join(f"{r.es(k)} {val / total * 100:.0f}%" for k, val in a.head(3).items())
@@ -422,8 +423,25 @@ def ver_calculo(salida: dict, clave: str = "x"):
         st.dataframe(pd.DataFrame(filas), hide_index=True, use_container_width=True)
 
 
+def ver_calculo(salida: dict, clave: str = "x", anidado: bool = False):
+    titulo = ":material/calculate: **Ver cálculo** · por qué salió cada perfume"
+    with st.container(key=f"destacado_calc_{clave}"):
+        if anidado:  # Streamlit no permite un desplegable dentro de otro
+            if st.toggle(titulo, key=f"{clave}_calc"):
+                with st.container(border=True):
+                    _contenido_calculo(salida)
+        else:
+            with st.expander(titulo):
+                _contenido_calculo(salida)
+
+
+def _ver_mas(salida: dict, cat: str):
+    vis = salida.setdefault("_vis", {})
+    vis[cat] = vis.get(cat, N_INICIAL) + N_PASO
+
+
 def mostrar_resultados(salida: dict, titulo_huella: str = "Tu huella olfativa", sujeto: str = "Tu huella",
-                       evitas: list[str] = (), cierre: bool = True, clave: str = "x"):
+                       evitas: list[str] = (), cierre: bool = True, clave: str = "x", anidado: bool = False):
     st.divider()
     perfil = salida["perfil"]
     c1, c2 = st.columns([1, 1], gap="large")
@@ -451,14 +469,24 @@ def mostrar_resultados(salida: dict, titulo_huella: str = "Tu huella olfativa", 
             if t.empty:
                 st.caption("Sin resultados con estos ajustes. Prueba incluir más géneros o quitar filtros.")
                 continue
+            vis = salida.setdefault("_vis", {})
+            n = vis.get(cat, N_INICIAL)
             cols = st.columns(3)
-            for i, (fid, (_, f)) in enumerate(zip(salida["ids"][cat], t.iterrows())):
+            for i, (fid, (_, f)) in enumerate(zip(salida["ids"][cat][:n], t.head(n).iterrows())):
                 cols[i % 3].markdown(tarjeta(f, fid, cat, salida["vector"], i == 0), unsafe_allow_html=True)
+            restantes = len(t) - n
+            if restantes > 0:
+                _, centro, _ = st.columns([1, 1, 1])
+                centro.button(f"Ver {min(N_PASO, restantes)} más de {cat}", key=f"{clave}_mas_{cat}",
+                              icon=":material/expand_more:", use_container_width=True, on_click=_ver_mas,
+                              args=(salida, cat))
+            else:
+                st.caption(f"Estos son los {len(t)} más parecidos de {cat}.")
     if cierre:
         a, b = T.CIERRE.split(". ", 1)
         st.markdown(f"<div class='cierre'>{html.escape(a)}. <span>{html.escape(b)}</span></div>",
                     unsafe_allow_html=True)
-    ver_calculo(salida, clave)
+    ver_calculo(salida, clave, anidado)
 
 
 def recomendar(**kw) -> dict | None:
@@ -470,42 +498,6 @@ def recomendar(**kw) -> dict | None:
 
 
 # ---------- secciones ----------
-def seccion_descubre(clave: str):
-    izq, der = st.columns([3, 2], gap="large")
-    with izq:
-        paso("1", "¿Qué perfumes te encantan?", "Opcional · busca por nombre o marca")
-        si_perf = selector_perfumes(f"{clave}_si", "Busca un perfume", )
-        paso("2", "¿Qué aromas te atraen?", "Toca los que te gusten; abajo te explico cada uno")
-        si_ac = selector_acordes(f"{clave}_ac", "Aromas")
-        paso("3", "¿Alguna nota favorita?", "Opcional · las notas son los ingredientes que reconoces en un perfume")
-        si_no = selector_notas(f"{clave}_no", "")
-        paso("4", "¿Algo que prefieras evitar?", "Opcional")
-        with st.expander("Aromas, notas o perfumes que no te gustan"):
-            no_ac = st.multiselect("Aromas", list(ACORDE_LBL), format_func=ACORDE_LBL.get, key=f"{clave}_noac",
-                                   placeholder="Ej.: dulce, ahumado…")
-            no_no = st.multiselect("Notas", list(NOTA_LBL), format_func=NOTA_LBL.get, key=f"{clave}_nono",
-                                   placeholder="Ej.: oud, vainilla…")
-            no_perf = selector_perfumes(f"{clave}_noperf", "Perfumes")
-        paso("5", "Último toque", "Opcional · marca tus favoritos absolutos")
-        p_w, a_w, n_w = selector_favoritos(clave, si_perf, si_ac, si_no)
-    with der:
-        panel_vivo(p_w, a_w, n_w)
-    aj = filtros(clave)
-    if st.button("Descubrir mi huella", type="primary", use_container_width=True, key=f"{clave}_btn"):
-        if not (si_perf or si_ac or si_no):
-            st.warning("Elige al menos un perfume, aroma o nota que te guste.")
-        elif not aj["generos"]:
-            st.warning("Elige al menos un género en Ajustes.")
-        else:
-            st.session_state[f"{clave}_out"] = recomendar(perfumes=p_w, acordes=a_w, notas=n_w, no_perfumes=no_perf,
-                                                          no_acordes=no_ac, no_notas=no_no, **aj)
-            st.session_state[f"{clave}_evitas"] = ([ACORDE_LBL[a] for a in no_ac] + [NOTA_LBL[n] for n in no_no]
-                                                   + [ETIQ.get(i, "").split(" – ", 1)[-1] for i in no_perf])
-    if st.session_state.get(f"{clave}_out"):
-        mostrar_resultados(st.session_state[f"{clave}_out"], evitas=st.session_state.get(f"{clave}_evitas", []),
-                           clave=clave)
-
-
 def seccion_parecidos(clave: str):
     paso("1", "¿Qué perfume te gusta?", "Te muestro los que más se parecen en acordes, aunque no sean clones")
     texto = st.text_input("Busca por nombre o marca", key=f"{clave}_txt", placeholder="Ej.: sauvage, club de nuit…")
@@ -519,7 +511,7 @@ def seccion_parecidos(clave: str):
     sus_notas = sorted(NOTAS_ID.get(fid, set()) & set(NOTA_LBL), key=lambda n: _sin_acentos(NOTA_LBL[n]))
     con = st.pills("Notas", sus_notas, selection_mode="multi", format_func=NOTA_LBL.get, key=f"{clave}_con",
                    label_visibility="collapsed") or []
-    aj = filtros(clave)
+    aj = filtros(clave, anidado=True)
     if st.button("Buscar parecidos", type="primary", use_container_width=True, key=f"{clave}_btn"):
         if not aj["generos"]:
             st.warning("Elige al menos un género en Ajustes.")
@@ -529,7 +521,7 @@ def seccion_parecidos(clave: str):
     if st.session_state.get(f"{clave}_out"):
         nombre = ETIQ.get(st.session_state.get(f"{clave}_fid"), "")
         mostrar_resultados(st.session_state[f"{clave}_out"], f"Huella de {nombre}", "Su huella", cierre=False,
-                           clave=clave)
+                           clave=clave, anidado=True)
 
 
 @st.cache_resource(show_spinner=False)
@@ -590,7 +582,7 @@ def seccion_facil(clave: str = "f"):
             st.session_state[f"{clave}_out"] = recomendar(
                 perfumes=perfumes, acordes=acordes, generos=T.FACIL_PARA.get(para, ("masculino", "unisex")),
                 clima="calor" if ocasion == "Deporte o calor" else None, incluir_estimados=True,
-                n_por_categoria=6)
+                n_por_categoria=N_MAX)
     if st.session_state.get(f"{clave}_out"):
         mostrar_resultados(st.session_state[f"{clave}_out"], clave=clave)
         st.markdown("<div class='nota-fina' style='text-align:center'>¿Te animaste? Cambia arriba a "
@@ -658,16 +650,11 @@ Hecho por [{T.AUTOR}]({T.GITHUB}) · código y análisis completo en GitHub.
 
 
 # ---------- página ----------
-arriba_izq, arriba_der = st.columns([4, 1])
-with arriba_der:
-    diseno = st.segmented_control("Versión de prueba", ["A", "B"], default="A", key="diseno",
-                                  help="Dos formas de organizar la página, para probar cuál se entiende mejor.")
-with arriba_izq:
-    st.markdown(f"<div class='marca'>{frasco('#B8C2D6')}<span>{html.escape(T.NOMBRE)}</span></div>",
-                unsafe_allow_html=True)
-    st.title(T.TITULO)
-    st.markdown(f"<div class='lema'>{html.escape(T.LEMA)}</div>", unsafe_allow_html=True)
-    st.markdown(f"<div class='sub'>{html.escape(T.SUBTITULO)}</div>", unsafe_allow_html=True)
+st.markdown(f"<div class='marca'>{frasco('#B8C2D6')}<span>{html.escape(T.NOMBRE)}</span></div>",
+            unsafe_allow_html=True)
+st.title(T.TITULO)
+st.markdown(f"<div class='lema'>{html.escape(T.LEMA)}</div>", unsafe_allow_html=True)
+st.markdown(f"<div class='sub'>{html.escape(T.SUBTITULO)}</div>", unsafe_allow_html=True)
 
 st.markdown("<div style='height:.6rem'></div>", unsafe_allow_html=True)
 with st.container(key="selector_modo"):
@@ -676,15 +663,7 @@ with st.container(key="selector_modo"):
 
 if modo == "No sé nada de perfumes":
     seccion_facil("f")
-    st.divider()
-    with st.container(key="destacado_clones_f"), st.expander(
-            ":material/compare_arrows: **Clones vs originales** · ¿qué tan fiel es cada clon a su original?"):
-        seccion_clones()
-    with st.container(key="destacado_como_f"), st.expander(
-            ":material/help: **Cómo funciona** · el algoritmo explicado sin rodeos"):
-        seccion_como()
-elif diseno == "B":
-    # Diseño B: todo en una pantalla
+else:
     paso("✦", "Cuéntanos qué te gusta", "Perfumes, aromas o notas: lo que tengas a la mano")
     izq, med, der = st.columns([2, 2, 1.6], gap="large")
     with izq:
@@ -712,24 +691,18 @@ elif diseno == "B":
             st.session_state["b_evitas"] = [ACORDE_LBL[a] for a in b_noac] + [NOTA_LBL[n] for n in b_nono]
     if st.session_state.get("b_out"):
         mostrar_resultados(st.session_state["b_out"], evitas=st.session_state.get("b_evitas", []), clave="b")
-    st.divider()
-    with st.container(key="destacado_clones"), st.expander(
-            ":material/compare_arrows: **Clones vs originales** · ¿qué tan fiel es cada clon a su original?"):
-        seccion_clones()
-    with st.container(key="destacado_como"), st.expander(
-            ":material/help: **Cómo funciona** · el algoritmo explicado sin rodeos"):
-        seccion_como()
-else:
-    # Diseño A: cuatro secciones
-    t1, t2, t3, t4 = st.tabs(["Descubre tu huella", "Parecidos a un perfume", "Clones vs originales", "Cómo funciona"])
-    with t1:
-        seccion_descubre("a")
-    with t2:
+
+st.divider()
+if modo != "No sé nada de perfumes":
+    with st.container(key="destacado_parecidos"), st.expander(
+            ":material/search: **Parecidos a un perfume** · elige uno y te muestro los que más se le parecen"):
         seccion_parecidos("p")
-    with t3:
-        seccion_clones()
-    with t4:
-        seccion_como()
+with st.container(key="destacado_clones"), st.expander(
+        ":material/compare_arrows: **Clones vs originales** · ¿qué tan fiel es cada clon a su original?"):
+    seccion_clones()
+with st.container(key="destacado_como"), st.expander(
+        ":material/help: **Cómo funciona** · el algoritmo explicado sin rodeos"):
+    seccion_como()
 
 st.markdown(f"<div class='pie'>{html.escape(T.NOMBRE)} · Datos: Fragrantica.com Fragrance Dataset (Olga G, Kaggle), "
             "CC BY-NC-SA 4.0 · Uso no comercial</div>", unsafe_allow_html=True)
