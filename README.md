@@ -2,6 +2,8 @@
 
 Análisis de datos de **72,172 perfumes** para comparar casas árabes, de diseñador, nicho y catálogo, ver cómo han cambiado los acordes con los años y medir qué tanto se parecen los clones a sus originales. Incluye un **recomendador por similitud de acordes** y un **tablero en Power BI**.
 
+**Pruébalo en línea:** [Huella Olfativa](https://huella-olfativa.streamlit.app), recomendador de perfumes por similitud de acordes.
+
 **Resultado en una línea:** los árabes no son más dulces que los de diseñador (34 % vs 34 %); se distinguen porque llevan mucho menos acorde aromático (41 % vs 71 %) y más almizclado y atalcado.
 
 > **En 30 segundos (para reclutadores)**
@@ -10,8 +12,23 @@ Análisis de datos de **72,172 perfumes** para comparar casas árabes, de diseñ
 > - **Método:** limpieza y unificación de notas, emparejamiento difuso de nombres, SQL en DuckDB, regresión ridge para estimar acordes (86 % de parecido en prueba) y similitud coseno.
 > - **Herramientas:** Python (pandas, scikit-learn), SQL con DuckDB y Power BI.
 > - **Resultado:** 5 hallazgos con datos de la comunidad, un recomendador funcional y un tablero de 6 páginas.
+> - **Producto:** página web en línea, *Huella Olfativa* (Streamlit): recomendador con modo para principiantes.
 
 ![Panorama](img/01_panorama.png)
+
+## Página: Huella Olfativa
+
+[huella-olfativa.streamlit.app](https://huella-olfativa.streamlit.app) · *Adondequiera que vayas, deja tu huella.*
+
+| Función | Qué hace |
+|---|---|
+| Descubre tu huella | Eliges perfumes, aromas o notas; tu huella se dibuja en vivo y te recomienda perfumes de diseñador, árabes, nicho y catálogo |
+| No sé nada de perfumes | 5 preguntas de la vida diaria (olores, ocasión, intensidad, perfumes conocidos) que se traducen a acordes |
+| Parecidos a un perfume | Eliges uno y muestra los más parecidos, aunque no sean clones |
+| Clones vs originales | Qué tan parecido es cada clon a su original, según la tabla propia |
+| Ver cálculo | Muestra la huella en números y qué acordes aportan más a cada recomendación |
+
+Se busca entre 70,679 perfumes; se recomienda entre ~9,800 (94 marcas clasificadas, con 50 votos o más o con acordes estimados de confianza). El % es parecido de acordes, no probabilidad de que te guste. Versión gratuita y no comercial, por la licencia del dataset.
 
 ## Tablero en Power BI
 
@@ -116,6 +133,8 @@ python src/correr_todo.py
 
 `01_emparejar_ranking.py` documenta el emparejamiento original del ranking; las correcciones manuales están en `data/propios/ranking_emparejado.csv`.
 
+Para correr la página: `pip install -r app/requirements.txt` y `streamlit run app/app.py`.
+
 ## Estructura
 
 ```
@@ -130,11 +149,14 @@ analisis-perfumes/
 │   ├── 07_estimar_acordes_propios.py
 │   ├── 08_metricas.py               # vistas y métricas en SQL
 │   ├── 09–11_*.py                   # exportes para Power BI
+│   ├── 12_exportar_app.py           # datos ligeros para la página
 │   ├── recomendador.py              # similitud coseno
 │   └── correr_todo.py
 ├── data/propios/   # capa propia, marcas → categoría, clones, ranking
 ├── resultados/     # tablas de los análisis y del tablero
-└── img/            # capturas del tablero
+├── img/            # capturas del tablero
+├── app/            # página Huella Olfativa (Streamlit): app.py, textos.py y datos ligeros
+└── .streamlit/     # tema de la página
 ```
 
 ## Fuentes
